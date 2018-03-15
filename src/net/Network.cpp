@@ -62,7 +62,7 @@ Network::Network(const Options *options) :
     }
 
     if (m_options->donateLevel() > 0) {
-        m_donate = new DonateStrategy(Platform::userAgent(), this);
+        //m_donate = new DonateStrategy(Platform::userAgent(), this);
     }
 
     m_timer.data = this;
@@ -109,7 +109,7 @@ void Network::onActive(Client *client)
 void Network::onJob(Client *client, const Job &job)
 {
     if (m_donate && m_donate->isActive() && client->id() != -1) {
-        return;
+        //return;
     }
 
     setJob(client, job);
